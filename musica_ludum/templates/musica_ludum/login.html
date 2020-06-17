@@ -1,0 +1,21 @@
+{% extends "musica_ludum/navbar.html" %}
+
+{% block navbar %}
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'register' %}"><i class="fas fa-user-plus"></i> Register</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block content %}
+    <h1 style="margin: 1em;">Login</h1>
+    <form method="post" action="{% url 'login' %}">
+        <table style="margin: 1em auto;">
+            {{form}}
+        </table>
+        {% csrf_token %}
+        <button type="submit" class="btn btn-dark" id="id_login_button">Submit</button>
+    </form>
+{% endblock %}

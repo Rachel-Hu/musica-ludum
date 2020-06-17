@@ -1,0 +1,115 @@
+.navbar-brand {
+    font-family: 'Special Elite', cursive;
+}
+
+* {
+    box-sizing: unset;
+}
+
+body {
+    text-align: center;
+}
+
+.piano {
+    margin: 5em auto;
+    cursor: pointer;
+    list-style-type: none;
+}
+
+.piano li {
+    position: relative; 
+    float: left; 
+    margin: 0; 
+    padding: 0;
+}
+
+li.black {
+    margin: 0 0 0 -30px;
+    width: 40px;
+    height: 250px;
+    background: #000000;
+    z-index: 1000;
+    border-top: 2px solid #000000;
+    border-right: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+}
+
+li.black:active {
+    border-top: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+    -webkit-box-shadow: inset 7px 10px 67px rgba(204,204,204,0.2);
+    -moz-box-shadow: inset 7px 10px 67px 8px rgba(204,204,204,0.2);
+    box-shadow: inset 7px 10px 67px 8px rgba(204,204,204,0.2);
+}
+
+li.white {
+    width: 60px;
+    height: 400px;
+    background: #ffffff;
+    border-top: 2px solid #000000;
+    border-right: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+}
+
+li.white:active {
+    border-top: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+    -webkit-box-shadow: inset 7px 10px 67px 8px rgba(0,0,0,0.2);
+    -moz-box-shadow: inset 7px 10px 67px 8px rgba(0,0,0,0.2);
+    box-shadow: inset 7px 10px 67px 8px rgba(0,0,0,0.2);
+}
+
+li.black + li.white {
+    margin-left: -12px;
+}
+
+.piano li { 
+    border-radius: 0 0 7px 7px;
+}
+
+.piano li:first-of-type {
+    border-left: 2px solid #000000;
+    border-radius: 10px 0 7px 7px;
+}
+
+.piano li:last-of-type {
+    border-radius: 0 10px 7px 7px;
+}
+
+.piano li div {
+    text-align: center;
+    position: relative;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2em;
+}
+
+.white .key {
+    top: 370px;
+    color: #48516a;
+}
+
+.white .pitch {
+    top: 378px;
+}
+
+.black .key {
+    top: 220px;
+    color: #ffffff;
+}
+
+.black .pitch {
+    top: -60px;
+}
+
+.pitch {
+    color: #93b5d4;
+}
+
+#record {
+    margin-top: 0.5em;
+    color: #48516a;
+}
+
+audio {
+    display: none;
+}

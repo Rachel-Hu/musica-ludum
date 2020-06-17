@@ -1,0 +1,40 @@
+.compose-list {
+    margin-top: 5%;
+}
+
+.navbar-brand {
+    font-family: 'Special Elite', cursive;
+}
+
+.compose-list h2 {
+    font-family: 'Special Elite', cursive;
+    margin: 1em;
+}
+
+.download-link {
+    text-align: center;
+}
+
+.rename-link {
+    text-align: right;
+}
+
+.stop-play-btn {
+    border: none;
+}
+.stop-play-btn:focus {outline:0;}
+
+.play-btn {
+    border: none;
+}
+.play-btn:focus {outline:0;}
+
+h4 {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+}
+
+p {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'musica_ludum/free.css' %}">
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/13.0.1/Tone.min.js"></script>
+    <link rel="shortcut icon" type="image/png" href="{% static 'musica_ludum/images/music.ico' %}"/>
+    <title>Musica Ludum</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}"><i class="fas fa-compact-disc"></i> Musica Ludum</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                <a class="nav-link" href="#">Free Mode <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="{% url 'game' %}">Game Mode</a>
+                </li>
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{username}}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{% url 'dashboard' %}">Dashboard</a>   
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    
+                </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row m-auto">
+            <div class="col-lg-3">
+                <i class="far fa-play-circle fa-5x" id="record"></i>
+            </div>
+        </div>
+    </div>
+
+    <audio controls>
+        <source id="source" src="" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="container">
+        <div class="row mx-auto">
+            <ul class="piano">
+                <li class="white piano-key" id="F3"><div class="key">Z</div><div class="pitch">F</div></li>
+                <li class="black piano-key" id="F3s"><div class="key">X</div><div class="pitch">F#</div></li>
+                <li class="white piano-key" id="G3"><div class="key">C</div><div class="pitch">G</div></li>
+                <li class="black piano-key" id="G3s"><div class="key">V</div><div class="pitch">G#</div></li>
+                <li class="white piano-key" id="A3"><div class="key">B</div><div class="pitch">A</div></li>
+                <li class="black piano-key" id="A3s"><div class="key">N</div><div class="pitch">A#</div></li>
+                <li class="white piano-key" id="B3"><div class="key">M</div><div class="pitch">B</div></li>
+                <li class="white piano-key" id="C4"><div class="key">A</div><div class="pitch">C</div></li>
+                <li class="black piano-key" id="C4s"><div class="key">W</div><div class="pitch">C#</div></li>
+                <li class="white piano-key" id="D4"><div class="key">S</div><div class="pitch">D</div></li>
+                <li class="black piano-key" id="D4s"><div class="key">E</div><div class="pitch">D#</div></li>
+                <li class="white piano-key" id="E4"><div class="key">D</div><div class="pitch">E</div></li>
+                <li class="white piano-key" id="F4"><div class="key">F</div><div class="pitch">F</div></li>
+                <li class="black piano-key" id="F4s"><div class="key">T</div><div class="pitch">F#</div></li>
+                <li class="white piano-key" id="G4"><div class="key">G</div><div class="pitch">G</div></li>
+                <li class="black piano-key" id="G4s"><div class="key">Y</div><div class="pitch">G#</div></li>
+                <li class="white piano-key" id="A4"><div class="key">H</div><div class="pitch">A</div></li>
+                <li class="black piano-key" id="A4s"><div class="key">U</div><div class="pitch">A#</div></li>
+                <li class="white piano-key" id="B4"><div class="key">J</div><div class="pitch">B</div></li>
+                <li class="white piano-key" id="C5"><div class="key">K</div><div class="pitch">C</div></li>
+                <li class="black piano-key" id="C5s"><div class="key">O</div><div class="pitch">C#</div></li>
+                <li class="white piano-key" id="D5"><div class="key">L</div><div class="pitch">D</div></li>
+                <li class="black piano-key" id="D5s"><div class="key">P</div><div class="pitch">D#</div></li>
+                <li class="white piano-key" id="E5"><div class="key">;</div><div class="pitch">E</div></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <script src="{% static 'musica_ludum/free.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+/* body {
+    background: url(https://images.unsplash.com/photo-1520446266423-6daca23fe8c7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80);
+    background-size: cover;
+    background-position: center;
+}
+
+html {
+    height: 100%;
+} */
+
+.navbar-brand {
+    font-family: 'Special Elite', cursive;
+}
+
+.heading{
+  vertical-align: middle;
+}
+
+.heading h1{
+    color: #EBEFC7; 
+    font-size: 52.52px;
+    line-height: 95px;
+    font-weight: 400;
+    text-align: center;
+    margin: 0 0 10px;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+}
+
+
+.heading span{
+    color: #4B4B43; 
+    font-size: 14px;
+    text-align: center;
+    display: inline-block;
+    width: 200px;
+    height: 27px;
+    line-height: 21px;
+    background: #E5F16B;
+    border: 1px solid #eee;
+    border-radius: 7px;
+    padding: 1px;
+    cursor: pointer;
+    vertical-align: middle;
+    margin-left: 200px;
+}
+
+    
+
+.singlegame{
+  background: url(./../../static/musica_ludum/images/banner.png) no-repeat center top / cover;
+}
+
+.singlegame .scoreboard{
+    background-color: #fff;
+ 
+    position: absolute;
+    border: 3px solid #E5F16B;
+    border-radius: 10px;
+}
+ 
+.singlegame .scoreboard p{
+    font-size: 20px;
+    color: #000;
+    margin-left: 5px;
+}
+
+.singlegame .scoreboard #score{
+    font-size: 50px;
+    color: #000;
+}
+
+.singlegame .mainwin{
+    width: 1500px;
+    height: 600px;
+    border: 1px solid #E5F16B;
+    padding: 10px;
+ 
+    position: relative;
+    overflow: hidden;
+}
+ 
+ 
+.singlegame .row{
+    width: 150%;
+    height: 120px;
+    overflow: hidden;
+    margin-left: 150px;
+ 
+    position: absolute;
+}
+.singlegame #row001 {
+    top: -80px;
+}
+.singlegame #row002 {
+    top: 20px;
+}
+.singlegame #row003 {
+    top: 120px;
+}
+.singlegame #row004 {
+    top: 220px;
+}
+.singlegame #row005 {
+    top: 320px;
+}
+.singlegame #row006 {
+    top: 420px;
+}
+.singlegame #keyline {
+    top: 550px;
+}
+ 
+.singlegame .grid-default {
+    width: 100px;
+    height: 75%;
+    border: 1px solid #ccc;
+    background-color: #000;
+    margin: 20px;
+    float: left;
+}
+
+.singlegame #marginline{
+    width: 75%;
+    height: 10px;
+    background: red;
+    top: 530px;
+    left: 0;
+}
+ 
+ 
+.singlegame .keys{
+    line-height: 20px;
+    display: inline-block;
+    width: 140px;
+    text-align: center;
+    color: #E5F16B;
+}
+
